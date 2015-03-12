@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+	<meta charset="utf-8">
+	<title>TENNISradar</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="css/styles.css" rel="stylesheet">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src="http://api-maps.yandex.ru/2.0/?load=package.standard&lang=ru-RU"></script>
+	<script src="js/maps.js"></script>
+	<script src="js/niceCheck.js"></script>
+	<script src="js/jquery.scrollbar.min.js"></script>
+	<link href="js/jquery.scrollbar.css" rel="stylesheet">
+	<script src="js/jquery.jcarousel.min.js"></script>
+	<link href="js/jquery.lightbox-0.5.css" rel="stylesheet">
+	<script src="js/jquery.lightbox-0.5.js"></script>
+	<script src="js/js.js"></script>
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+<body>
+
+<!-- header -->
+<header class="header clearfix">
+	<div class="header_center">
+		<a href="javascript:void(0)" class="logo"></a>
+		<ul class="bread_crumbs">
+			<li><a href="javascript:void(0)">Найденные корты <span>(8)</span></a></li>
+			<li>Арма</li>
+		</ul>
+	</div>
+</header>
+<!-- // header -->
+
+<!-- content -->
+<main class="content">
+	<div class="content_center clearfix">
+		<div class="content_left">
+			<section class="block_white">
+				<div class="block_white_title clearfix">
+					<h1>Арма <span>(теннисный клуб)</span></h1>
+					<div class="rating">Рейтинг: <div class="club_class club_class_2"></div></div>
+				</div>
+				<article class="block_club_address clearfix">
+					<div class="block_club_address_left">
+						<img class="img" src="images/logo_.png" width="100" height="100" alt=""><br>
+						<span>Поделиться:</span>
+						<ul class="ul_share">
+							<li><a href="javascript:void(0)" class="ico_share_vk"></a></li>
+							<li><a href="javascript:void(0)" class="ico_share_fb"></a></li>
+							<li><a href="javascript:void(0)" class="ico_share_tw"></a></li>
+						</ul>
+					</div>
+					<ul class="ul_address flexible">
+						<li class="ico_metro_big">Курская</li>
+						<li class="ico_address">Нижний Сусальный переулок, д.5. Территория завода «Арма».</li>
+						<li class="ico_time">с 7:00 до 23:00, без выходных.</li>
+						<li class="ico_phone">
+							<b>8 (495) 785-62-70</b> <i>— ресепшен</i><br>
+							<b>8 (915) 159-21-01</b> <i>— зал</i><br>
+							<b>8 (915) 159-21-02</b> <i>— зал</i><br>
+						</li>
+					</ul>
+					<div class="block_club_address_map"></div>
+				</article>
+				<ul class="tabs tabs_1 clearfix">
+					<li><a href="javascript:void(0)" id="tab_1_1" class="active">Информация</a></li>
+					<li><a href="javascript:void(0)" id="tab_1_2">Фотогалерея</a></li>
+					<li><a href="javascript:void(0)" id="tab_1_3">Тренерский состав</a></li>
+				</ul>
+				<article class="tab_content_1 tab_1_1_content clearfix">
+					<h3><span>Теннисные корты и описание</span></h3>
+					<div class="block_club_description clearfix">
+						<div class="block_club_description_left">
+							<div class="block_court_type clearfix">
+								<div class="title">открытые</div>
+								<div class="block_court_type_inn">
+									<span class="ico_square_green">2</span>
+									<u class="ico_court_cover_grass"></u>
+									<i>трава</i>
+									<div class="block_court_type_inn_popup">
+										<u>Открытый корт</u>
+										<span>Тип:</span> парный<br>
+										<span>Покрытие:</span> трава<br>
+										<span>Количество:</span> 1<br>
+									</div>
+								</div>
+								<div class="block_court_type_inn">
+									<span class="ico_square_green">1</span>
+									<u class="ico_court_cover_grass big"></u>
+									<i>трава</i>
+									<div class="block_court_type_inn_popup">
+										<u>Открытый корт</u>
+										<span>Тип:</span> парный<br>
+										<span>Покрытие:</span> трава<br>
+										<span>Количество:</span> 1<br>
+									</div>
+								</div>
+							</div>
+							<div class="block_court_type clearfix">
+								<div class="title">крытые</div>
+								<div class="block_court_type_inn">
+									<span class="ico_square_black">5</span>
+									<u class="ico_court_cover_soft_hard"></u>
+									<i>мягкий хард</i>
+									<div class="block_court_type_inn_popup">
+										<u>Открытый корт</u>
+										<span>Тип:</span> парный<br>
+										<span>Покрытие:</span> трава<br>
+										<span>Количество:</span> 1<br>
+									</div>
+								</div>
+							</div>
+							<a href="javascript:void(0)" class="a_info a_types_of_courts dotted">Типы кортов</a><br><br>
+							<div class="block_more">
+								<ul class="ul_description">
+									<li>
+										Крытые корты
+										<span>Конструкция: купол<br> 2 одиночных корта, трава<br> 1 парный корт, трава</span>
+									</li>
+									<li>
+										Открытые корты
+										<span>5 парных кортов, мягкий хард</span>
+									</li>
+									<li>
+										Освещённость
+										<span>400 лк</span>
+									</li>
+									<li>Разделительные сетки</li>
+									<li>Задние фоны</li>
+								</ul>
+							</div>
+						</div>
+						<div class="block_club_description_right">
+							<ul class="ul_description">
+								<li>Прокат инвентаря</li>
+								<li>
+									Раздевалки
+									<span>мужская (3 душа), женская (3 душа), детская, VIP</span>
+								</li>
+								<li>Фен</li>
+								<li>
+									Выдаются
+									<span>полотенце, шампунь, бутылка воды</span>
+								</li>
+								<li>
+									Парковка
+									<span>бесплатная</span>
+								</li>
+								<li>Система кондиционирования</li>
+							</ul>
+							<div class="block_more">
+								<ul class="ul_description">
+									<li>Кафе с Wi-Fi и смотровой площадкой</li>
+									<li>Магазин</li>
+									<li>Прокат инвентаря</li>
+									<li>Медпункт</li>
+									<li>Стрингер</li>
+								</ul>
+							</div>
+						</div>
+						<div class="clear">&nbsp;</div>
+						<div class="text_center"><a href="javascript:void(0)" class="dotted a_club_description">Показать подробную информацию ↓</a></div>
+					</div>
+					<h3><span>УСЛУГИ</span></h3>
+					<div class="block_club_services">
+						<div class="block_club_services_inn">
+							<ul class="ul_club_services">
+								<li>
+									<span class="ico_club_services_1"></span>
+									<u>персональные тренировки</u>
+									<div class="club_services_popup">
+										КЛУБНЫЙ ТЕННИС
+										<p>К вашим услугам 5 крытых кортов со спортивным покрытием Hard AC Play Cushion.</p>
+										<a href="javascript:void(0)">Все корты с услугой «клубный теннис»</a>
+									</div>
+								</li>
+								<li>
+									<span class="ico_club_services_2"></span>
+									<u>групповые тренировки</u>
+									<div class="club_services_popup">
+										КЛУБНЫЙ ТЕННИС
+										<p>К вашим услугам 5 крытых кортов со спортивным покрытием Hard AC Play Cushion.</p>
+										<a href="javascript:void(0)">Все корты с услугой «клубный теннис»</a>
+									</div>
+								</li>
+								<li>
+									<span class="ico_club_services_3 disable"></span>
+									<u>спортивные секции</u>
+									<div class="club_services_popup">
+										КЛУБНЫЙ ТЕННИС
+										<p>К вашим услугам 5 крытых кортов со спортивным покрытием Hard AC Play Cushion.</p>
+										<a href="javascript:void(0)">Все корты с услугой «клубный теннис»</a>
+									</div>
+								</li>
+								<li>
+									<span class="ico_club_services_4"></span>
+									<u>клубный теннис</u>
+									<div class="club_services_popup">
+										КЛУБНЫЙ ТЕННИС
+										<p>К вашим услугам 5 крытых кортов со спортивным покрытием Hard AC Play Cushion.</p>
+										<a href="javascript:void(0)">Все корты с услугой «клубный теннис»</a>
+									</div>
+								</li>
+								<li>
+									<span class="ico_club_services_5 disable"></span>
+									<u>детский теннис</u>
+									<div class="club_services_popup">
+										КЛУБНЫЙ ТЕННИС
+										<p>К вашим услугам 5 крытых кортов со спортивным покрытием Hard AC Play Cushion.</p>
+										<a href="javascript:void(0)">Все корты с услугой «клубный теннис»</a>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<ul class="ul_club_services">
+							<li>
+								<span class="ico_club_services_6"></span>
+								<u>кардиотеннис</u>
+								<div class="club_services_popup">
+									КЛУБНЫЙ ТЕННИС
+									<p>К вашим услугам 5 крытых кортов со спортивным покрытием Hard AC Play Cushion.</p>
+									<a href="javascript:void(0)">Все корты с услугой «клубный теннис»</a>
+								</div>
+							</li>
+							<li>
+								<span class="ico_club_services_7"></span>
+								<u>настольный теннис</u>
+								<div class="club_services_popup">
+									КЛУБНЫЙ ТЕННИС
+									<p>К вашим услугам 5 крытых кортов со спортивным покрытием Hard AC Play Cushion.</p>
+									<a href="javascript:void(0)">Все корты с услугой «клубный теннис»</a>
+								</div>
+							</li>
+							<li>
+								<span class="ico_club_services_8"></span>
+								<u>солярий</u>
+								<div class="club_services_popup">
+									КЛУБНЫЙ ТЕННИС
+									<p>К вашим услугам 5 крытых кортов со спортивным покрытием Hard AC Play Cushion.</p>
+									<a href="javascript:void(0)">Все корты с услугой «клубный теннис»</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<h3><span>О ТЕННИСНОМ КЛУБЕ</span></h3>
+					<div class="block_club_info">
+						Теннисный клуб "Арма" находится в самом центре города по адресу Нижний Сусальный переулок, д.5. В трех минутах пешком от м. Курская. К вашим услугам 5 крытых кортов со спортивным покрытием Hard AC Play Cushion. Такое покрытие обычно используется для проведения турниров Большого Шлема Australian Open и US Open.<br>
+						<div class="block_more">
+							Идеально подходит для двусторонней печати, не деформируется и не просвечивается. Может использоваться в любых копировальных аппаратах, лазерных и струйных принтерах. Технология "ColorLok" Идеально подходит для двусторонней печати, не деформируется и не просвечивается.
+						</div>
+						<div class="text_center"><a href="javascript:void(0)" class="dotted a_club_info">Показать полное описание ↓</a></div>
+					</div>
+				</article>
+				<article class="tab_content_1 tab_1_2_content clearfix" style="display:none;">
+					<div class="block_gallery">
+						<a class="img_big" href="images/img_big.jpg" rel="lightbox"><img src="images/img_big.jpg" width="590" height="300" alt=""></a>
+						<div class="block_gallery_carousel">
+							<div class="mycarousel">
+								<ul>
+									<li><a href="javascript:void(0)" class="active"><img src="images/img_big.jpg" width="98" height="98" alt=""></a></li>
+									<li><a href="javascript:void(0)"><img src="images/img_big.jpg" width="98" height="98" alt=""></a></li>
+									<li><a href="javascript:void(0)"><img src="images/img_big.jpg" width="98" height="98" alt=""></a></li>
+									<li><a href="javascript:void(0)"><img src="images/img_big.jpg" width="98" height="98" alt=""></a></li>
+									<li><a href="javascript:void(0)"><img src="images/img_big.jpg" width="98" height="98" alt=""></a></li>
+									<li><a href="javascript:void(0)"><img src="images/img_big.jpg" width="98" height="98" alt=""></a></li>
+								</ul>
+							</div>
+							<a href="javascript:void(0)" class="carousel_arrow_left"></a>
+							<a href="javascript:void(0)" class="carousel_arrow_right"></a>
+						</div>
+					</div>
+				</article>
+				<article class="tab_content_1 tab_1_3_content clearfix" style="display:none;">
+					<div class="block_staff clearfix">
+						<div class="block_staff_left">
+							<img class="img" src="images/img.jpg" width="120" height="120" alt="">
+							<ul class="ul_address">
+								<li class="ico_price"><a href="javascript:void(0)" class="dotted">Прайс на услуги</a></li>
+								<li class="ico_phone">8 (495) 785-62-70</li>
+							</ul>
+						</div>
+						<div class="flexible">
+							<ul class="ul_staff_info">
+								<li><b>Руслан Довгань</b> (24 года)</li>
+								<li>
+									10 лет <span>играет в теннис</span><br>
+									2 лет <span>работает тренером</span>
+								</li>
+							</ul>
+						</div>
+						<a href="javascript:void(0)" class="button ico_profile">Подробный профиль</a>
+					</div>
+					<div class="block_staff clearfix">
+						<div class="block_staff_left">
+							<img class="img" src="images/img.jpg" width="120" height="120" alt="">
+							<ul class="ul_address">
+								<li class="ico_price"><a href="javascript:void(0)" class="dotted">Прайс на услуги</a></li>
+								<li class="ico_phone">8 (495) 785-62-70<br> 8 (915) 159-21-01</li>
+							</ul>
+						</div>
+						<div class="flexible">
+							<ul class="ul_staff_info">
+								<li>
+									<b>Андрей Столяров</b> (65 лет)<br>
+									<span>КМС, Мастер спорта, 4,8 (рейтинг Такой-то Ассоциации)</span>
+								</li>
+								<li>
+									Турнирные достижения<br>
+									<span>пречень достижений, может быть очень длинным</span>
+								</li>
+								<li>
+									25 лет <span>играет в теннис</span><br>
+									11 лет <span>работает тренером</span>
+								</li>
+								<li>
+									Профильное образование<br>
+									<span>наименование ВУЗа и курса</span>
+								</li>
+								<li>
+									Курсы повышения квалификации<br>
+									<span>перечень курсов, может быть очень длинным</span>
+								</li>
+								<li>
+									Услуги<br>
+									<span>трениновка, спарринг, групповая тренировка, работа с детьми</span>
+								</li>
+								<li>
+									Другие корты, где котов тренировать:<br>
+									<a href="javascript:void(0)">Арма</a>, <a href="javascript:void(0)">Лужники</a>
+								</li>
+							</ul>
+						</div>
+						<a href="javascript:void(0)" class="button ico_profile">Подробный профиль</a>
+					</div>
+				</article>
+			</section>
+			<a href="javascript:void(0)" class="button_on_top dotted">↑ Наверх</a>
+		</div>
+		<div class="content_right">
+			<section class="block_white">
+				<h2 class="bg">стоимость аренды</h2>
+				<ul class="tabs_small tabs_2 clearfix">
+					<li><a href="javascript:void(0)" id="tab_2_1" class="active">Будние дни</a></li>
+					<li><a href="javascript:void(0)" id="tab_2_2">Выходные и праздники</a></li>
+				</ul>
+				<article class="tab_content_2 tab_2_1_content clearfix">
+					<table class="table">
+						<tr>
+							<th>Время</th>
+							<th>Открытые</th>
+							<th>Крытые</th>
+						</tr>
+						<tr>
+							<td>9<i>00</i> — 12<i>00</i></td>
+							<td>200</td>
+							<td>400</td>
+						</tr>
+						<tr>
+							<td>12<i>00</i> — 17<i>00</i></td>
+							<td><b>400</b></td>
+							<td><b>500</b></td>
+						</tr>
+						<tr>
+							<td>17<i>00</i> — 20<i>00</i></td>
+							<td>600</td>
+							<td>800</td>
+						</tr>
+						<tr>
+							<td>20<i>00</i> — 23<i>00</i></td>
+							<td>800</td>
+							<td>1000</td>
+						</tr>
+					</table>
+				</article>
+				<article class="tab_content_2 tab_2_2_content clearfix" style="display:none;">
+					<table class="table">
+						<tr>
+							<th>Время</th>
+							<th>Открытые</th>
+							<th>Крытые</th>
+						</tr>
+						<tr>
+							<td>9<i>00</i> — 12<i>00</i></td>
+							<td>1200</td>
+							<td>1400</td>
+						</tr>
+						<tr>
+							<td>12<i>00</i> — 17<i>00</i></td>
+							<td><b>1400</b></td>
+							<td><b>1500</b></td>
+						</tr>
+						<tr>
+							<td>17<i>00</i> — 20<i>00</i></td>
+							<td>1600</td>
+							<td>1800</td>
+						</tr>
+						<tr>
+							<td>20<i>00</i> — 23<i>00</i></td>
+							<td>1800</td>
+							<td>11000</td>
+						</tr>
+					</table>
+				</article>
+				<div class="block_price_info">
+					Бронирование: <span>24 часа до игры (не позднее)</span><br>
+					Отмена брони: <span>12 часов до игры (не ранее)</span><br>
+					<strong>Скидка 30% при заказе от 3 часов</strong>
+				</div>
+				<div class="block_more">
+					<h2 class="bg">прайс-лист на услуги</h2>
+					<table class="table_2">
+						<tr>
+							<td>Парковка</td>
+							<td>бесплатно</td>
+						</tr>
+						<tr>
+							<td>Аренда сейфовой ячейки</td>
+							<td>500 ₽</td>
+						</tr>
+						<tr>
+							<td>Прокат ракетки</td>
+							<td>800 ₽</td>
+						</tr>
+						<tr>
+							<td>Прокат корзины мячей</td>
+							<td>250</td>
+						</tr>
+						<tr>
+							<td>Натяжка струн</td>
+							<td>780 ₽</td>
+						</tr>
+						<tr>
+							<td>Ностольный теннис</td>
+							<td>500 ₽/ч</td>
+						</tr>
+						<tr>
+							<td>Пляжный теннис</td>
+							<td>500 ₽/ч</td>
+						</tr>
+						<tr>
+							<td>Бадминтон</td>
+							<td>500 ₽/ч</td>
+						</tr>
+						<tr>
+							<td>Сквош</td>
+							<td>500 ₽</td>
+						</tr>
+						<tr>
+							<td>Тренажерный зал</td>
+							<td>800 ₽</td>
+						</tr>
+						<tr>
+							<td>Бассейн</td>
+							<td>250 ₽</td>
+						</tr>
+						<tr>
+							<td>Сауна</td>
+							<td>780 ₽</td>
+						</tr>
+						<tr>
+							<td>Аэробика</td>
+							<td>500 ₽</td>
+						</tr>
+						<tr>
+							<td>Единоборства</td>
+							<td>800 ₽</td>
+						</tr>
+						<tr>
+							<td>Косметический салон</td>
+							<td>250 ₽</td>
+						</tr>
+						<tr>
+							<td>Массаж</td>
+							<td>780 ₽</td>
+						</tr>
+						<tr>
+							<td>Солярий</td>
+							<td>500 ₽</td>
+						</tr>
+						<tr>
+							<td>Детская комната</td>
+							<td>800 ₽</td>
+						</tr>
+					</table>
+				</div>
+				<div class="block_white_bottom text_center">
+					<a href="javascript:void(0)" class="dotted a_price_more">Полный прайс-лист ↓</a>
+				</div>
+			</section>
+			<section class="block_events clearfix">
+				<h3><span>НОВОСТИ И МЕРОПРИЯТИЯ</span></h3>
+				<a href="javascript:void(0)" class="block_event"><span>15 июня —</span> Турниры выходного дня</a>
+				<a href="javascript:void(0)" class="block_event"><span>8—12 июня —</span> Тур в Хорватию</a>
+			</section>
+		</div>
+	</div>
+</main>
+<!-- // content -->
+
+<!-- footer -->
+<footer class="footer">
+	<div class="footer_center">
+		<nav class="footer_menu"><a href="javascript:void(0)">О проекте</a> <span>|</span> <a href="javascript:void(0)">Реклама</a></nav>
+		<div class="footer_copy">© 2012 Opentennis.ru</div>
+	</div>
+</footer>
+<!-- // footer -->
+
+<!-- popup -->
+<div class="overlay">&nbsp;</div>
+
+<section class="popup popup_types_of_courts clearfix">
+	<a href="javascript:void(0)" class="button_close"></a>
+	<h2>Типы теннисных кортов</h2>
+	Параметры стадиона и кортов (здесь и далее жирным выделены более важные, все остальное сильно второстепенно). Можно даже сказать что стадион это столько-то крытых/открытых парных/одиночных кортов с таким-то покрытием. В практически любых комбинациях.
+</section>
+<!-- // popup -->
+
+<!-- radar -->
+<div class="overlay_radar">&nbsp;</div>
+<!-- radar -->
+
+</body>
+</html>

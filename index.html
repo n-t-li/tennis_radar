@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+	<meta charset="utf-8">
+	<title>TENNISradar</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="css/styles.css" rel="stylesheet">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src="http://api-maps.yandex.ru/2.0/?load=package.standard&lang=ru-RU"></script>
+	<script src="js/maps.js"></script>
+	<script src="js/niceCheck.js"></script>
+	<script src="js/jquery.scrollbar.min.js"></script>
+	<link href="js/jquery.scrollbar.css" rel="stylesheet">
+	<script src="js/jquery.jcarousel.min.js"></script>
+	<link href="js/jquery.lightbox-0.5.css" rel="stylesheet">
+	<script src="js/jquery.lightbox-0.5.js"></script>
+	<script src="js/js.js"></script>
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+<body>
+
+<!-- header -->
+<header class="header header_search clearfix">
+	<a href="javascript:void(0)" class="logo"></a>
+	<a href="javascript:void(0)" class="a_search_options">Параметры поиска</a>
+	<div class="block_search flexible">
+		<a href="javascript:void(0)" class="button_search"></a>
+		<div class="flexible"><input type="text" placeholder="Поиск по названию, станции метро или району"></div>
+	</div>
+</header>
+<!-- // header -->
+
+<!-- content -->
+<main class="content">
+	<div class="block_search_options">
+		<div class="block_search_options_inn">
+			<div class="block_search_options_group clearfix">
+				<div class="block_search_options_group_title">Тип корта <span class="o_info">?</span></div>
+				<ul>
+					<li><input type="checkbox" id="ch_1_1"><label for="ch_1_1" class="a ico_options_type_of_court_1 active">Крытый</label></li>
+					<li><input type="checkbox" id="ch_1_2"><label for="ch_1_2" class="a ico_options_type_of_court_2">Открытый</label></li>
+				</ul>
+			</div>
+			<div class="block_search_options_group clearfix">
+				<div class="block_search_options_group_title">Класс клуба <span class="o_info">?</span></div>
+				<ul>
+					<li><input type="checkbox" id="ch_2_1"><label for="ch_2_1" class="a club_class club_class_1"></label></li>
+					<li><input type="checkbox" id="ch_2_2"><label for="ch_2_2" class="a club_class club_class_2"></label></li>
+					<li><input type="checkbox" id="ch_2_3"><label for="ch_2_3" class="a club_class club_class_3"></label></li>
+				</ul>
+			</div>
+			<div class="block_search_options_group clearfix">
+				<input class="niceCheck" type="checkbox" id="ch_1"> <label for="ch_1">Шаговая доступность от метро</label>
+			</div>
+			<br>
+			<div class="block_search_options_group clearfix">
+				<div class="block_search_options_group_title">Тип покрытия <span class="o_info">?</span></div>
+				<ul>
+					<li><input type="checkbox" id="ch_3_1"><label for="ch_3_1" class="a disable">Грунт</label></li>
+					<li><input type="checkbox" id="ch_3_2"><label for="ch_3_2" class="a">Трава</label></li>
+					<li><input type="checkbox" id="ch_3_3"><label for="ch_3_3" class="a">Мягкий хард</label></li>
+					<li><input type="checkbox" id="ch_3_4"><label for="ch_3_4" class="a">Хард</label></li>
+					<li><input type="checkbox" id="ch_3_5"><label for="ch_3_5" class="a">Синтетика</label></li>
+					<li><input type="checkbox" id="ch_3_6"><label for="ch_3_6" class="a">Линолеум</label></li>
+					<li><input type="checkbox" id="ch_3_7"><label for="ch_3_7" class="a">Паркет</label></li>
+				</ul>
+			</div>
+			<br>
+			<div class="block_search_options_group clearfix">
+				<div class="block_search_options_group_title block_search_options_group_title_services">Услуги</div>
+				<ul>
+					<li><input type="checkbox" id="ch_4_1"><label for="ch_4_1" class="a a_services ico_services_small_1 disable">Персональные<br> треннировки <i>0</i></label></li>
+					<li><input type="checkbox" id="ch_4_2"><label for="ch_4_2" class="a a_services ico_services_small_2">Групповые<br> треннировки <i>25</i></label></li>
+					<li><input type="checkbox" id="ch_4_3"><label for="ch_4_3" class="a a_services ico_services_small_3">Профессиональный<br> теннис <i>11</i></label></li>
+					<li><input type="checkbox" id="ch_4_4"><label for="ch_4_4" class="a a_services ico_services_small_4">Клубный<br> теннис <i>5</i></label></li>
+					<li><input type="checkbox" id="ch_4_5"><label for="ch_4_5" class="a a_services ico_services_small_5">Детский<br> теннис <i>5</i></label></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="map_holder">
+		<div id="map" class="map"></div>
+		<div class="block_search_results_top">
+			<a href="javascript:void(0)" class="a_list">Развернуть список</a>
+			<span>Найдено: 160</span>
+			<a href="javascript:void(0)" class="a_reset">Сбросить</a>
+		</div>
+		<div id="listview" class="block_search_results scrollbar-outer">
+			<div class="clearfix">
+				<article class="listitem bg_gold">
+					<div class="club_class club_class_3"></div>
+					<div class="title"><i class="o o_star"></i> <span>Арма</span> <u>теннисный клуб</u></div>
+					<ul class="ul_info">
+						<li><span class="ico_square_black">5</span>крытых кортов (синтетика, хард)</li>
+						<li><span class="ico_square_green">1</span>открытый корт (трава)</li>
+						<li class="li_discount"><span class="ico_discount"></span><strong>cкидка 30% при заказе от 3 часов</strong></li>
+					</ul>
+					<p>
+						<a href="javascript:void(0)" class="dotted">Нижний Сусальный переулок, д.5.</a><br>
+						<span class="ico_metro"></span> Курская (500 м.) <span class="ico_metro_blue"></span> Курская (850м.)
+					</p>
+					<a href="javascript:void(0)">Подробнее</a>
+					<ul class="ul_services_small clearfix">
+						<li>
+							<div class="ico_services_small ico_services_small_1">
+								<div class="services_small_title">Персональные<br> треннировки</div>
+							</div>
+						</li>
+						<li>
+							<div class="ico_services_small ico_services_small_2">
+								<div class="services_small_title">Групповые<br> треннировки</div>
+							</div>
+						</li>
+						<li>
+							<div class="ico_services_small ico_services_small_3">
+								<div class="services_small_title">Профессиональный<br> теннис</div>
+							</div>
+						</li>
+						<li>
+							<div class="ico_services_small ico_services_small_4">
+								<div class="services_small_title">Клубный теннис</div>
+							</div>
+						</li>
+						<li>
+							<div class="ico_services_small ico_services_small_5">
+								<div class="services_small_title">Детский<br> теннис</div>
+							</div>
+						</li>
+					</ul>
+				</article>
+				<article class="listitem">
+					<div class="club_class club_class_2"></div>
+					<div class="title"><i class="o o_gold">1</i> <span>Клуб с любым другим длинным названием</span> <u>теннисный клуб</u></div>
+					<ul class="ul_info">
+						<li><span class="ico_square_black">2</span>крытых кортов (синтетика, хард)</li>
+						<li class="li_discount"><span class="ico_discount"></span><strong>cкидка 30% при заказе от 3 часов</strong></li>
+					</ul>
+					<p>
+						<a href="javascript:void(0)" class="dotted">Нижний Сусальный переулок, д.5.</a><br>
+						<span class="ico_metro"></span> Курская (500 м.)
+					</p>
+					<a href="javascript:void(0)">Подробнее</a>
+					<ul class="ul_services_small clearfix">
+						<li>
+							<div class="ico_services_small ico_services_small_1 disable">
+								<div class="services_small_title">Персональные<br> треннировки</div>
+							</div>
+						</li>
+						<li>
+							<div class="ico_services_small ico_services_small_2">
+								<div class="services_small_title">Групповые<br> треннировки</div>
+							</div>
+						</li>
+						<li>
+							<div class="ico_services_small ico_services_small_3 disable">
+								<div class="services_small_title">Профессиональный<br> теннис</div>
+							</div>
+						</li>
+						<li>
+							<div class="ico_services_small ico_services_small_4">
+								<div class="services_small_title">Клубный теннис</div>
+							</div>
+						</li>
+						<li>
+							<div class="ico_services_small ico_services_small_5 disable">
+								<div class="services_small_title">Детский<br> теннис</div>
+							</div>
+						</li>
+					</ul>
+				</article>
+				<article class="listitem">
+					<div class="club_class club_class_1"></div>
+					<div class="title"><i class="o o_white">2</i> <span>Клуб с любым другим длинным названием</span> <u>теннисный клуб</u></div>
+					<ul class="ul_info">
+						<li><span class="ico_square_black">3</span>крытых кортов (синтетика, хард)</li>
+						<li class="li_discount"><span class="ico_discount"></span><strong>cкидка 30% при заказе от 3 часов</strong></li>
+					</ul>
+					<p>
+						<a href="javascript:void(0)" class="dotted">Нижний Сусальный переулок, д.5.</a><br>
+						<span class="ico_metro"></span> Курская (500 м.)
+					</p>
+					<a href="javascript:void(0)">Подробнее</a>
+					<ul class="ul_services_small clearfix">
+						<li>
+							<div class="ico_services_small ico_services_small_1 disable">
+								<div class="services_small_title">Персональные<br> треннировки</div>
+							</div>
+						</li>
+						<li>
+							<div class="ico_services_small ico_services_small_2 disable">
+								<div class="services_small_title">Групповые<br> треннировки</div>
+							</div>
+						</li>
+						<li>
+							<div class="ico_services_small ico_services_small_3 disable">
+								<div class="services_small_title">Профессиональный<br> теннис</div>
+							</div>
+						</li>
+						<li>
+							<div class="ico_services_small ico_services_small_4 disable">
+								<div class="services_small_title">Клубный теннис</div>
+							</div>
+						</li>
+						<li>
+							<div class="ico_services_small ico_services_small_5 disable">
+								<div class="services_small_title">Детский<br> теннис</div>
+							</div>
+						</li>
+					</ul>
+				</article>
+				<article class="listitem">
+					<div class="club_class club_class_1"></div>
+					<div class="title"><i class="o o_white">3</i> <span>Клуб с любым другим длинным названием</span> <u>теннисный клуб</u></div>
+					<ul class="ul_info">
+						<li><span class="ico_square_black">3</span>крытых кортов (синтетика, хард)</li>
+						<li class="li_discount"><span class="ico_discount"></span><strong>cкидка 30% при заказе от 3 часов</strong></li>
+					</ul>
+					<p>
+						<a href="javascript:void(0)" class="dotted">Нижний Сусальный переулок, д.5.</a><br>
+						<span class="ico_metro"></span> Курская (500 м.)
+					</p>
+					<a href="javascript:void(0)">Подробнее</a>
+					<ul class="ul_services_small clearfix">
+						<li>
+							<div class="ico_services_small ico_services_small_1 disable">
+								<div class="services_small_title">Персональные<br> треннировки</div>
+							</div>
+						</li>
+						<li>
+							<div class="ico_services_small ico_services_small_2 disable">
+								<div class="services_small_title">Групповые<br> треннировки</div>
+							</div>
+						</li>
+						<li>
+							<div class="ico_services_small ico_services_small_3 disable">
+								<div class="services_small_title">Профессиональный<br> теннис</div>
+							</div>
+						</li>
+						<li>
+							<div class="ico_services_small ico_services_small_4 disable">
+								<div class="services_small_title">Клубный теннис</div>
+							</div>
+						</li>
+						<li>
+							<div class="ico_services_small ico_services_small_5 disable">
+								<div class="services_small_title">Детский<br> теннис</div>
+							</div>
+						</li>
+					</ul>
+				</article>
+				<article class="listitem">
+					<div class="club_class club_class_1"></div>
+					<div class="title"><i class="o o_white">4</i> <span>Клуб с любым другим длинным названием</span> <u>теннисный клуб</u></div>
+					<ul class="ul_info">
+						<li><span class="ico_square_black">3</span>крытых кортов (синтетика, хард)</li>
+						<li class="li_discount"><span class="ico_discount"></span><strong>cкидка 30% при заказе от 3 часов</strong></li>
+					</ul>
+					<p>
+						<a href="javascript:void(0)" class="dotted">Нижний Сусальный переулок, д.5.</a><br>
+						<span class="ico_metro"></span> Курская (500 м.)
+					</p>
+					<a href="javascript:void(0)">Подробнее</a>
+					<ul class="ul_services_small clearfix">
+						<li>
+							<div class="ico_services_small ico_services_small_1 disable">
+								<div class="services_small_title">Персональные<br> треннировки</div>
+							</div>
+						</li>
+						<li>
+							<div class="ico_services_small ico_services_small_2 disable">
+								<div class="services_small_title">Групповые<br> треннировки</div>
+							</div>
+						</li>
+						<li>
+							<div class="ico_services_small ico_services_small_3 disable">
+								<div class="services_small_title">Профессиональный<br> теннис</div>
+							</div>
+						</li>
+						<li>
+							<div class="ico_services_small ico_services_small_4 disable">
+								<div class="services_small_title">Клубный теннис</div>
+							</div>
+						</li>
+						<li>
+							<div class="ico_services_small ico_services_small_5 disable">
+								<div class="services_small_title">Детский<br> теннис</div>
+							</div>
+						</li>
+					</ul>
+				</article>
+			</div>
+		</div>
+		<div class="map_bubble">
+			<a href="javascript:void(0)" class="button_close_small"></a>
+			<div class="club_class club_class_1"></div>
+			<div class="title"><i class="o o_pin_black">4</i> <span><a href="javascript:void(0)">Клуб с любым другим длинным названием</a></span> <u>спортивный комплекс</u></div>
+			<ul class="ul_info">
+				<li class="li_discount"><span class="ico_discount"></span><strong>cкидка 30% при заказе от 3 часов</strong></li>
+			</ul>
+			<p>
+				Нижний Сусальный переулок, д.5.<br>
+				<span class="ico_metro"></span> Курская (500 м.)
+			</p>
+		</div>
+	</div>
+</main>
+<!-- // content -->
+
+<!-- footer -->
+<footer class="footer footer_search">
+	<nav class="footer_menu"><a href="javascript:void(0)">О проекте</a> <span>|</span> <a href="javascript:void(0)">Реклама</a></nav>
+	<div class="footer_copy">© 2012 Opentennis.ru</div>
+</footer>
+<!-- // footer -->
+
+</body>
+</html>
