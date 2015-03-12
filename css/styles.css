@@ -1201,7 +1201,7 @@ div.ico_services_small:hover .services_small_title{
 	bottom: 0;
 	right: 0;
 	width: 220px;
-	background: url("../images/_map.gif") center center no-repeat;
+	background: url("../images/map.gif") center center no-repeat;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
